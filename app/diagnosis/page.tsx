@@ -44,6 +44,7 @@ export default function DiagnosisPage() {
           <h1>{level}</h1>
           <p>This score does not rate the quality of your work. It shows how clearly your current project decisions are defined.</p>
         </div>
+
         <div className="result-grid">
           <div className="result-panel">
             <p className="panel-label">Priority areas</p>
@@ -54,15 +55,31 @@ export default function DiagnosisPage() {
               </div>
             ))}
           </div>
+
+          <div className="result-panel accent-panel">
+            <p className="panel-label">What this result can tell you</p>
+            <h2>Your lowest-scoring area is not necessarily the worst part of the video.</h2>
+            <p>It is the area where your decision criteria are least clear right now.</p>
+          </div>
+        </div>
+
+        <div className="result-grid">
+          <div className="result-panel">
+            <p className="panel-label">What this result cannot tell you</p>
+            <h2>It cannot tell you which scene to cut, which idea to protect, or what to change first without seeing the actual project.</h2>
+            <p>That is where professional review begins.</p>
+          </div>
+
           <div className="result-panel accent-panel">
             <p className="panel-label">Smallest useful next step</p>
             <h2>Choose your lowest-scoring area. Find one scene that supports it and one scene that works against it.</h2>
-            <p>The free check ends here. Deciding what to keep, cut, or rebuild requires looking at the actual project.</p>
+            <p>If that answer is still unclear, send me the project and I’ll identify the core problem, what is already working, and the revision order I would recommend.</p>
           </div>
         </div>
+
         <div className="button-row centered">
           <Link className="button primary" href={"/consult?score=" + score + "&focus=" + encodeURIComponent(weakest.map((x) => x.axis).join(", "))}>
-            Request a project review
+            Have me review the actual project
           </Link>
           <button className="button secondary" onClick={() => setSubmitted(false)}>Review my answers</button>
         </div>
