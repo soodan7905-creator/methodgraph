@@ -22,6 +22,7 @@ button,input,select,textarea { font:inherit; }
 .button:disabled { cursor:not-allowed; opacity:.42; }
 .microcopy { margin-top:16px; color:var(--muted); font-size:13px; }
 .dark-section { padding:100px 0; background:var(--ink); color:white; }
+.dark-section .split-section { padding:0; }
 .pale { color:var(--accent); }
 .dark-section h2,.split-section h2,.cta-band h2 { margin:0; font-size:clamp(34px,5vw,58px); line-height:1.08; letter-spacing:-.045em; }
 .checkpoint-grid { display:grid; grid-template-columns:repeat(3,1fr); margin-top:64px; border-top:1px solid #414141; }
@@ -36,6 +37,9 @@ button,input,select,textarea { font:inherit; }
 .comparison div { padding:26px 0; border-bottom:1px solid var(--line); }
 .comparison strong { font-size:20px; }
 .comparison p { margin:10px 0 0; color:var(--muted); line-height:1.7; }
+.dark-section .comparison { border-top-color:#414141; }
+.dark-section .comparison div { border-bottom-color:#414141; }
+.dark-section .comparison p { color:#bcbcbc; }
 .cta-band { padding:74px 0; background:var(--accent); }
 .cta-inner { display:flex; align-items:end; justify-content:space-between; gap:40px; }
 .diagnosis-wrap,.result-wrap { padding:72px 0 110px; }
@@ -50,6 +54,7 @@ button,input,select,textarea { font:inherit; }
 .question-card legend { display:flex; gap:12px; padding:0 8px; }
 .question-card legend span { color:var(--muted); }
 .question-card>p { max-width:850px; margin:12px 0 24px; font-size:18px; line-height:1.6; word-break:keep-all; }
+.question-card .scale-key { display:none; margin:0 0 12px; font-size:12px; color:var(--muted); }
 .scale { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
 .scale label { padding:14px 8px; border:1px solid var(--line); text-align:center; cursor:pointer; }
 .scale label.selected { border-color:var(--ink); background:var(--accent); }
@@ -78,28 +83,33 @@ button,input,select,textarea { font:inherit; }
 .consult-intro h1 { font-size:clamp(44px,6vw,74px); }
 .consult-intro>p:not(.eyebrow),.consult-intro li { color:var(--muted); line-height:1.75; }
 .consult-intro ul { margin-top:34px; padding-left:20px; }
+.reviewer-credit { margin:26px 0 18px; font-size:14px; letter-spacing:.02em; }
+.reviewer-credit strong { color:var(--ink); letter-spacing:.08em; }
 .consult-form { display:grid; gap:20px; padding:34px; background:#faf8f3; border:1px solid var(--line); }
 .consult-form label { display:grid; gap:9px; font-size:13px; font-weight:800; }
 .consult-form input,.consult-form select,.consult-form textarea { width:100%; padding:13px; border:1px solid #bbb5aa; background:white; border-radius:0; }
 .consult-form textarea { resize:vertical; }
 .consult-form .consent { grid-template-columns:auto 1fr; align-items:start; font-weight:400; line-height:1.5; }
 .consult-form .consent input { width:auto; margin-top:3px; }
+.optional { color:var(--muted); font-weight:400; }
 .form-message { margin:0; font-size:14px; }
 .form-message.success { color:#177245; }
 .form-message.error { color:#a32828; }
 @media (max-width:760px) {
-  .site-header nav { gap:14px; }
-  .site-header nav a:first-child { display:none; }
+  .site-header { height:auto; min-height:68px; gap:18px; padding-top:14px; padding-bottom:14px; }
+  .site-header nav { gap:12px; font-size:12px; flex-wrap:wrap; justify-content:flex-end; }
   .hero { padding:74px 0 88px; }
   .checkpoint-grid,.split-section,.result-grid,.consult-wrap { grid-template-columns:1fr; }
   .checkpoint { min-height:auto; padding:24px 0; border-right:0; border-bottom:1px solid #414141; }
   .checkpoint:not(:first-child) { padding-left:0; }
   .checkpoint h3 { margin-top:28px; }
   .split-section,.consult-wrap { gap:44px; padding:74px 0; }
+  .dark-section .split-section { padding:0; }
   .cta-inner,.diagnosis-head { align-items:start; flex-direction:column; }
   .scale { grid-template-columns:repeat(5,1fr); }
   .scale label { padding:12px 2px; }
   .scale span { display:none; }
+  .question-card .scale-key { display:block; }
   .score-card { padding:30px 24px; }
   .score-card>strong { font-size:64px; }
   .site-footer { flex-direction:column; }
