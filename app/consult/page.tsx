@@ -33,17 +33,18 @@ function ConsultForm() {
     try {
       const netlifyBody = new URLSearchParams();
       netlifyBody.set("form-name", "project-review");
+      netlifyBody.set("bot-field", "");
       for (const [key, value] of form.entries()) {
         netlifyBody.set(key, String(value));
       }
 
-      await fetch("/", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: netlifyBody.toString(),
       });
     } catch {
-      // The Supabase submission is already saved. Netlify email notification can be retried via dashboard if needed.
+      // Supabase remains the source of truth even if the notification submission fails.
     }
 
     setState("success");
@@ -52,67 +53,76 @@ function ConsultForm() {
   }
 
   return (
-    <>
-      <form name="project-review" data-netlify="true" hidden>
-        <input type="hidden" name="form-name" value="project-review" />
-        <input name="name" />
-        <input name="email" />
-        <input name="project_type" />
-        <textarea name="challenge" />
-        <input name="diagnosis_score" />
-        <input name="diagnosis_focus" />
-        <input name="privacy_consent" />
-      </form>
+    <form className="consult-form" onSubmit={submit}>
+      <input type="hidden" name="diagnosis_score" value={params.get("score") ?? ""} />
+      <input type="hidden" name="diagnosis_focus" value={params.get("focus") ?? ""} />
 
-      <form className="consult-form" onSubmit={submit}>
-        <input type="hidden" name="diagnosis_score" value={params.get("score") ?? ""} />
-        <input type="hidden" name="diagnosis_focus" value={params.get("focus") ?? ""} />
+      <label>
+        Name or creator name
+        <input name="name" required maxLength={80} />
+      </label>
 
-        <label>
-          Name or creator name
-          <input name="name" required maxLength={80} />
-        </label>
+      <label>
+        Email
+        <input name="email" type="email" required maxLength={160} />
+      </label>
 
-        <label>
-          Email
-          <input name="email" type="email" required maxLength={160} />
-        </label>
+      <label>
+        Project type
+        <select name="project_type" required defaultValue="">
+          <option value="" disabled>Select a project type</option>
+          <option>YouTube / channel video</option>
+          <option>Brand / promotional video</option>
+          <option>Film / trailer</option>
+          <option>Documentary / interview</option>
+          <option>Other video project</option>
+        </select>
+      </label>
 
-        <label>
-          Project type
-          <select name="project_type" required defaultValue="">
-            <option value="" disabled>Select a project type</option>
-            <option>YouTube / channel video</option>
-            <option>Brand / promotional video</option>
-            <option>Film / trailer</option>
-            <option>Documentary / interview</option>
-            <option>Other video project</option>
-          </select>
-        </label>
+      <label>
+        Project stage
+        <select name="project_stage" required defaultValue="">
+          <option value="" disabled>Select the current stage</option>
+          <option>Idea / concept</option>
+          <option>Treatment / script</option>
+          <option>Rough cut</option>
+          <option>Fine cut / near final</option>
+          <option>Finished video</option>
+        </select>
+      </label>
 
-        <label>
-          Where are you most stuck?
-          <textarea
-            name="challenge"
-            required
-            rows={6}
-            maxLength={1500}
-            placeholder="Tell me what you are making and where the decision-making has stalled."
-          />
-        </label>
+      <label>
+        Project link <span className="optional">(optional)</span>
+        <input
+          name="project_link"
+          type="url"
+          maxLength={500}
+          placeholder="YouTube, Vimeo, Frame.io, Google Drive, etc."
+        />
+      </label>
 
-        <label className="consent">
-          <input type="checkbox" name="privacy_consent" value="true" required />
-          I agree that the information I submit may be used to respond to this review request.
-        </label>
+      <label>
+        Where are you most stuck?
+        <textarea
+          name="challenge"
+          required
+          rows={6}
+          maxLength={1500}
+          placeholder="Tell me what you are making and where the decision-making has stalled."
+        />
+      </label>
 
-        <button className="button primary" disabled={state === "sending"}>
-          {state === "sending" ? "Sending…" : "Ask about a project review"}
-        </button>
+      <label className="consent">
+        <input type="checkbox" name="privacy_consent" value="true" required />
+        I agree that the information I submit may be used to respond to this review request.
+      </label>
 
-        {message && <p className={"form-message " + state}>{message}</p>}
-      </form>
-    </>
+      <button className="button primary" disabled={state === "sending"}>
+        {state === "sending" ? "Sending…" : "Ask about a project review"}
+      </button>
+
+      {message && <p className={"form-message " + state}>{message}</p>}
+    </form>
   );
 }
 
@@ -122,6 +132,7 @@ export default function ConsultPage() {
       <div className="consult-intro">
         <p className="eyebrow">PROFESSIONAL REVIEW</p>
         <h1>Not another score.<br />A clearer next decision.</h1>
+        <p className="reviewer-credit">Reviewed by <strong>SOODAN PARK</strong> · Film &amp; Trailer Editor</p>
         <p>
           I review your treatment, rough cut, or finished video to identify the real problem,
           the strengths worth protecting, and the order in which I would revise the project.
