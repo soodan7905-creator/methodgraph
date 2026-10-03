@@ -71,11 +71,11 @@ function ConsultForm() {
         Project type
         <select name="project_type" required defaultValue="">
           <option value="" disabled>Select a project type</option>
-          <option>YouTube / channel video</option>
-          <option>Brand / promotional video</option>
-          <option>Film / trailer</option>
-          <option>Documentary / interview</option>
-          <option>Other video project</option>
+          <option value="YouTube / channel video">YouTube / channel video</option>
+          <option value="Brand / promotional video">Brand / promotional video</option>
+          <option value="Film / trailer">Film / trailer</option>
+          <option value="Documentary / interview">Documentary / interview</option>
+          <option value="Other video project">Other video project</option>
         </select>
       </label>
 
@@ -83,11 +83,11 @@ function ConsultForm() {
         Project stage
         <select name="project_stage" required defaultValue="">
           <option value="" disabled>Select the current stage</option>
-          <option>Idea / concept</option>
-          <option>Treatment / script</option>
-          <option>Rough cut</option>
-          <option>Fine cut / near final</option>
-          <option>Finished video</option>
+          <option value="Idea / concept">Idea / concept</option>
+          <option value="Treatment / script">Treatment / script</option>
+          <option value="Rough cut">Rough cut</option>
+          <option value="Fine cut / near final">Fine cut / near final</option>
+          <option value="Finished video">Finished video</option>
         </select>
       </label>
 
