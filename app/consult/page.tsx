@@ -114,7 +114,10 @@ function ConsultForm() {
 
       <label className="consent">
         <input type="checkbox" name="privacy_consent" value="true" required />
-        I agree that the information I submit may be used to respond to this review request.
+        <span>
+          I agree that the information I submit may be used to respond to this review request.{" "}
+          <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>
+        </span>
       </label>
 
       <button className="button primary" disabled={state === "sending"}>
