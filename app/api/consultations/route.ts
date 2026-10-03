@@ -4,8 +4,9 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_ANON_KEY;
+
   if (!url || !key) {
-    return NextResponse.json({ error: "상담 접수 연결이 아직 설정되지 않았습니다." }, { status: 503 });
+    return NextResponse.json({ error: "The review request service is not configured yet." }, { status: 503 });
   }
 
   const body = await request.json();
@@ -13,8 +14,9 @@ export async function POST(request: Request) {
   const email = String(body.email ?? "").trim();
   const projectType = String(body.project_type ?? "").trim();
   const challenge = String(body.challenge ?? "").trim();
+
   if (!name || !email || !projectType || !challenge || body.privacy_consent !== "true") {
-    return NextResponse.json({ error: "필수 항목과 개인정보 동의를 확인해 주세요." }, { status: 400 });
+    return NextResponse.json({ error: "Please complete all required fields and accept the privacy consent." }, { status: 400 });
   }
 
   const supabase = createClient(url, key, { auth: { persistSession: false } });
@@ -26,6 +28,10 @@ export async function POST(request: Request) {
     diagnosis_score: body.diagnosis_score ? Number(body.diagnosis_score) : null,
     diagnosis_focus: String(body.diagnosis_focus ?? "") || null,
   });
-  if (error) return NextResponse.json({ error: "신청을 저장하지 못했습니다." }, { status: 500 });
+
+  if (error) {
+    return NextResponse.json({ error: "Your request could not be saved." }, { status: 500 });
+  }
+
   return NextResponse.json({ ok: true });
 }
