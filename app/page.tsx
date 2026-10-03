@@ -64,7 +64,7 @@ export default function Home() {
           </div>
           <div className="comparison">
             <div>
-              <strong>25 years of editing experience</strong>
+              <strong>SOODAN PARK · 25 years of editing experience</strong>
               <p>Commercial films, trailers, and long-form storytelling shaped the questions behind this check.</p>
             </div>
             <div>
