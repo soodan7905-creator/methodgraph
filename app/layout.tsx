@@ -21,9 +21,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>{children}</main>
         <footer className="site-footer">
           <strong><span className="notranslate" translate="no" lang="en">CUTTRU</span></strong>
-          <span>
-            Project judgment shaped by 25 years of professional editing experience. · <Link href="/privacy">Privacy</Link>
-          </span>
+          <div className="footer-meta">
+            <span>Project judgment shaped by 25 years of professional editing experience.</span>
+            <Link className="footer-privacy" href="/privacy">Privacy</Link>
+          </div>
         </footer>
       </body>
     </html>
