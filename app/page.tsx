@@ -60,7 +60,7 @@ export default function Home() {
         <div className="shell split-section">
           <div>
             <p className="eyebrow pale">BUILT ON EDITORIAL JUDGMENT</p>
-            <h2>CUTTRU comes from real editing work, not a generic scoring model.</h2>
+            <h2><span className="notranslate" translate="no">CUTTRU</span> comes from real editing work, not a generic scoring model.</h2>
           </div>
           <div className="comparison">
             <div>
