@@ -135,7 +135,7 @@ export default function ConsultPage() {
       <div className="consult-intro">
         <p className="eyebrow">PROFESSIONAL REVIEW</p>
         <h1>Not another score.<br />A clearer next decision.</h1>
-        <p className="reviewer-credit">Reviewed by <strong>SOODAN PARK</strong> · Film &amp; Trailer Editor</p>
+        <p className="reviewer-credit">Reviewed by a film &amp; trailer editor with 25 years of professional editing experience.</p>
         <p>
           I review your treatment, rough cut, or finished video to identify the real problem,
           the strengths worth protecting, and the order in which I would revise the project.
