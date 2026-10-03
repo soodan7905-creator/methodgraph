@@ -46,8 +46,7 @@ export default function PrivacyPage() {
 
         <h2>Contact</h2>
         <p>
-          CUTTRU is operated by SOODAN PARK. For privacy questions, contact us through the same email channel
-          used for your project review request.
+          For privacy questions, contact CUTTRU through the same email channel used for your project review request.
         </p>
       </div>
     </section>
