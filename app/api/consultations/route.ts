@@ -25,16 +25,23 @@ export async function POST(request: Request) {
   const projectLink = String(body.project_link ?? "").trim();
   const challenge = String(body.challenge ?? "").trim();
 
-  if (
-    !name ||
-    !email ||
-    !projectType ||
-    !projectStage ||
-    !allowedStages.has(projectStage) ||
-    !challenge ||
-    body.privacy_consent !== "true"
-  ) {
-    return NextResponse.json({ error: "Please complete all required fields and accept the privacy consent." }, { status: 400 });
+  if (!name) {
+    return NextResponse.json({ error: "Please enter your name or creator name." }, { status: 400 });
+  }
+  if (!email) {
+    return NextResponse.json({ error: "Please enter your email." }, { status: 400 });
+  }
+  if (!projectType) {
+    return NextResponse.json({ error: "Please select a project type." }, { status: 400 });
+  }
+  if (!projectStage || !allowedStages.has(projectStage)) {
+    return NextResponse.json({ error: "Please select a valid project stage." }, { status: 400 });
+  }
+  if (!challenge) {
+    return NextResponse.json({ error: "Please tell me where you are most stuck." }, { status: 400 });
+  }
+  if (body.privacy_consent !== "true") {
+    return NextResponse.json({ error: "Please accept the privacy consent." }, { status: 400 });
   }
 
   if (projectLink.length > 500) {
