@@ -23,10 +23,19 @@ export default function DiagnosisPage() {
   const [submitted, setSubmitted] = useState(false);
   const completed = answers.filter(Boolean).length;
   const score = answers.reduce((sum, value) => sum + value, 0);
-  const weakest = useMemo(() => questions
-    .map((question, index) => ({ ...question, value: answers[index] }))
-    .sort((a, b) => a.value - b.value)
-    .slice(0, 2), [answers]);
+
+  const priority = useMemo(() => {
+    const scored = questions.map((question, index) => ({ ...question, value: answers[index] }));
+    const minimum = Math.min(...scored.map((item) => item.value));
+    const tied = scored.filter((item) => item.value === minimum);
+    const hasClearPriority = tied.length <= 2;
+
+    return {
+      tied,
+      hasClearPriority,
+      focus: hasClearPriority ? tied.map((item) => item.axis).join(", ") : "No single priority area",
+    };
+  }, [answers]);
 
   if (submitted) {
     const level = score >= 42
@@ -38,22 +47,30 @@ export default function DiagnosisPage() {
     return (
       <section className="shell result-wrap">
         <p className="eyebrow">YOUR RESULT</p>
+
         <div className="score-card">
-          <span>Total score</span>
+          <span>Decision clarity snapshot</span>
           <strong>{score}<small>/50</small></strong>
           <h1>{level}</h1>
-          <p>This score does not rate the quality of your work. It shows how clearly your current project decisions are defined.</p>
+          <p>This is a self-check, not a quality rating. It reflects how clearly your current project decisions are defined.</p>
         </div>
 
         <div className="result-grid">
           <div className="result-panel">
             <p className="panel-label">Priority areas</p>
-            {weakest.map((item) => (
-              <div className="weak-item" key={item.axis}>
-                <strong>{item.axis}</strong>
-                <p>{item.text}</p>
+            {priority.hasClearPriority ? (
+              priority.tied.map((item) => (
+                <div className="weak-item" key={item.axis}>
+                  <strong>{item.axis}</strong>
+                  <p>{item.text}</p>
+                </div>
+              ))
+            ) : (
+              <div className="weak-item">
+                <strong>No single priority area stands out.</strong>
+                <p>Several areas scored equally. Treat this as a broad signal rather than assuming the first items are your weakest points.</p>
               </div>
-            ))}
+            )}
           </div>
 
           <div className="result-panel accent-panel">
@@ -72,13 +89,17 @@ export default function DiagnosisPage() {
 
           <div className="result-panel accent-panel">
             <p className="panel-label">Smallest useful next step</p>
-            <h2>Choose your lowest-scoring area. Find one scene that supports it and one scene that works against it.</h2>
+            <h2>
+              {priority.hasClearPriority
+                ? "Choose your lowest-scoring area. Find one scene that supports it and one scene that works against it."
+                : "Choose one area that feels most uncertain in the actual edit and test it against two real scenes."}
+            </h2>
             <p>If that answer is still unclear, send me the project and I’ll identify the core problem, what is already working, and the revision order I would recommend.</p>
           </div>
         </div>
 
         <div className="button-row centered">
-          <Link className="button primary" href={"/consult?score=" + score + "&focus=" + encodeURIComponent(weakest.map((x) => x.axis).join(", "))}>
+          <Link className="button primary" href={"/consult?score=" + score + "&focus=" + encodeURIComponent(priority.focus)}>
             Have me review the actual project
           </Link>
           <button className="button secondary" onClick={() => setSubmitted(false)}>Review my answers</button>
@@ -97,12 +118,15 @@ export default function DiagnosisPage() {
         </div>
         <div className="progress-copy">{completed} / {questions.length}</div>
       </div>
+
       <div className="progress"><span style={{ width: (completed * 10) + "%" }} /></div>
+
       <div className="question-list">
         {questions.map((question, index) => (
           <fieldset className="question-card" key={question.axis}>
             <legend><span>{String(index + 1).padStart(2, "0")}</span><strong>{question.axis}</strong></legend>
             <p>{question.text}</p>
+            <p className="scale-key">1 = Not at all · 5 = Definitely</p>
             <div className="scale" role="radiogroup" aria-label={question.axis + " score"}>
               {labels.map((label, labelIndex) => {
                 const value = labelIndex + 1;
@@ -123,6 +147,7 @@ export default function DiagnosisPage() {
           </fieldset>
         ))}
       </div>
+
       <button
         className="button primary submit-button"
         disabled={completed !== questions.length}
