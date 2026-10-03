@@ -12,7 +12,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <header className="site-header">
-          <Link href="/" className="brand">CUTTRU</Link>
+          <Link href="/" className="brand notranslate" translate="no">CUTTRU</Link>
           <nav aria-label="Main navigation">
             <Link href="/diagnosis">Free Project Check</Link>
             <Link href="/consult">Professional Review</Link>
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         <main>{children}</main>
         <footer className="site-footer">
-          <strong>CUTTRU</strong>
+          <strong className="notranslate" translate="no">CUTTRU</strong>
           <span>Project judgment shaped by 25 years of professional editing experience.</span>
         </footer>
       </body>
