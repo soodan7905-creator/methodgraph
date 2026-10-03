@@ -114,3 +114,15 @@ button,input,select,textarea { font:inherit; }
   .score-card>strong { font-size:64px; }
   .site-footer { flex-direction:column; }
 }
+
+.footer-meta { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.footer-privacy { font-size:11px; color:#8a8a8a; text-decoration:underline; text-underline-offset:3px; }
+.privacy-wrap { max-width:760px; padding:72px 0 110px; }
+.privacy-wrap h1 { margin:0; font-size:clamp(40px,6vw,64px); line-height:1; letter-spacing:-.05em; }
+.privacy-updated { margin:16px 0 36px; color:var(--muted); font-size:12px; }
+.privacy-copy { border-top:1px solid var(--line); padding-top:22px; }
+.privacy-copy p { margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.75; }
+@media (max-width:760px) {
+  .footer-meta { align-items:flex-start; }
+  .privacy-wrap { padding:56px 0 80px; }
+}
