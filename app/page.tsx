@@ -47,15 +47,21 @@ export default function Home() {
           <span>FILM &amp; EDITORIAL WORK</span>
         </div>
         <div className="studio-work-grid">
-          <article className="studio-work-card studio-work-first">
+          <a
+            className="studio-work-card studio-work-first"
+            href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-481bb790-636b-4c82-a744-ba7f26c87399"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch The Admiral (Myeongryang) portfolio video on O-VATION"
+          >
             <div className="studio-work-visual">
               <span className="studio-work-kind">FEATURE FILM</span>
               <span className="studio-work-number">01</span>
               <strong>THE<br />ADMIRAL</strong>
               <small>MYEONGRYANG</small>
             </div>
-            <div className="studio-work-caption"><h3>The Admiral</h3><p>Selected film experience</p></div>
-          </article>
+            <div className="studio-work-caption"><h3>The Admiral</h3><p>Watch on O-VATION ↗</p></div>
+          </a>
           <a
             className="studio-work-card studio-work-second"
             href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-93de2ab3-4ad1-4e22-91d9-3d9f894e8a4b"
