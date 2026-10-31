@@ -21,7 +21,7 @@ export default function Home() {
             Shaped by 25 years in professional film editing.
           </p>
           <div className="studio-actions">
-            <a className="studio-button studio-button-mint" href="#work">VIEW WORK <span aria-hidden="true">↗</span></a>
+            <a className="studio-button studio-button-mint" href="https://www.o-vation.co.kr/" target="_blank" rel="noopener noreferrer">WATCH FILM TRAILERS <span aria-hidden="true">↗</span></a>
             <Link className="studio-text-link" href="/consult">START A PROJECT <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
