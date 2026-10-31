@@ -21,12 +21,11 @@ export default function Home() {
             Shaped by 25 years in professional film editing.
           </p>
           <div className="studio-actions">
-            <a className="studio-button studio-button-mint" href="https://www.o-vation.co.kr/" target="_blank" rel="noopener noreferrer">WATCH FILM TRAILERS <span aria-hidden="true">↗</span></a>
+            <a className="studio-button studio-button-mint" href="#work">VIEW SELECTED WORK <span aria-hidden="true">↓</span></a>
             <Link className="studio-text-link" href="/consult">START A PROJECT <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
         <div className="studio-hero-aside" aria-hidden="true">STORY<br />EDITING<br />EMOTION<br />IMPACT</div>
-        <div className="studio-hero-counter" aria-hidden="true">01 / 05</div>
       </section>
 
       <section className="studio-services" id="services" aria-label="Services">
@@ -43,63 +42,75 @@ export default function Home() {
 
       <section className="studio-work studio-shell" id="work">
         <div className="studio-section-heading">
-          <p>SELECTED EXPERIENCE</p>
-          <span>FILM &amp; EDITORIAL WORK</span>
+          <p>SELECTED TRAILERS</p>
+          <span>FILM TRAILER PORTFOLIO</span>
         </div>
+        <p className="studio-work-intro">
+          A selection of theatrical trailer projects. Select a film poster to view the corresponding
+          work on O-VATION, my original film-trailer portfolio.
+        </p>
         <div className="studio-work-grid">
           <a
-            className="studio-work-card studio-work-first"
+            className="studio-work-card"
             href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-481bb790-636b-4c82-a744-ba7f26c87399"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Watch The Admiral (Myeongryang) portfolio video on O-VATION"
+            aria-label="View The Admiral (Myeongryang) trailer in the O-VATION portfolio"
           >
-            <div className="studio-work-visual">
-              <span className="studio-work-kind">FEATURE FILM</span>
-              <span className="studio-work-number">01</span>
-              <strong>THE<br />ADMIRAL</strong>
-              <small>MYEONGRYANG</small>
+            <div className="studio-work-poster">
+              <img
+                src="https://kobis.or.kr/common/mast/movie/2014/07/7e00a486e94f4428b8b2e54313b5c510.jpg"
+                alt="The Admiral (Myeongryang, 2014) theatrical poster"
+                loading="lazy"
+              />
+              <span className="studio-poster-view">VIEW TRAILER <span aria-hidden="true">↗</span></span>
             </div>
-            <div className="studio-work-caption"><h3>The Admiral</h3><p>Watch on O-VATION ↗</p></div>
+            <div className="studio-work-caption">
+              <h3>THE ADMIRAL <span>명량</span></h3>
+              <p>2014 · THEATRICAL TRAILER</p>
+            </div>
           </a>
           <a
-            className="studio-work-card studio-work-second"
+            className="studio-work-card"
             href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-93de2ab3-4ad1-4e22-91d9-3d9f894e8a4b"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Watch The Pirates (Haejeok) portfolio video on O-VATION"
+            aria-label="View The Pirates (Haejeok) trailer in the O-VATION portfolio"
           >
-            <div className="studio-work-visual">
-              <span className="studio-work-kind">FEATURE FILM</span>
-              <span className="studio-work-number">02</span>
-              <strong>THE<br />PIRATES</strong>
-              <small>HAEJEOK</small>
+            <div className="studio-work-poster">
+              <img
+                src="https://kobis.or.kr/common/mast/movie/2014/07/559dd04f1ad14ae896c227c30df85194.jpg"
+                alt="The Pirates (Haejeok, 2014) theatrical poster"
+                loading="lazy"
+              />
+              <span className="studio-poster-view">VIEW TRAILER <span aria-hidden="true">↗</span></span>
             </div>
-            <div className="studio-work-caption"><h3>The Pirates</h3><p>Watch on O-VATION ↗</p></div>
-          </a>
-          <article className="studio-work-card studio-work-third">
-            <div className="studio-work-visual">
-              <span className="studio-work-kind">EDITORIAL</span>
-              <span className="studio-work-number">03</span>
-              <strong>YOUR<br />STORY.</strong>
-              <small>THE NEXT PROJECT</small>
+            <div className="studio-work-caption">
+              <h3>THE PIRATES <span>해적</span></h3>
+              <p>2014 · THEATRICAL TRAILER</p>
             </div>
-            <div className="studio-work-caption"><h3>Your next project</h3><p>Trailers · Story-led editing</p></div>
-          </article>
-        </div>
-        <div className="studio-actions">
-          <a
-            className="studio-button studio-button-outline"
-            href="https://www.o-vation.co.kr/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WATCH THE ORIGINAL FILM TRAILER PORTFOLIO <span aria-hidden="true">↗</span>
           </a>
+          <aside className="studio-work-archive">
+            <p className="studio-overline">THE ORIGINAL PORTFOLIO</p>
+            <h3>More films.<br /><em>More stories.</em></h3>
+            <p>
+              O-VATION is my existing film-trailer portfolio website. It brings together
+              additional film trailers and editing work beyond the selections shown here.
+            </p>
+            <a
+              className="studio-text-link"
+              href="https://www.o-vation.co.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              EXPLORE O-VATION <span aria-hidden="true">↗</span>
+            </a>
+            <span className="studio-archive-footnote">O-VATION / FILM TRAILER ARCHIVE</span>
+          </aside>
         </div>
         <p className="studio-disclaimer">
-          The visuals above are conceptual graphic treatments, not video stills. View the completed trailer work
-          on O-VATION, the original film trailer portfolio.
+          Film posters identify the productions. The poster images are promotional materials;
+          the linked pages contain my trailer work.
         </p>
       </section>
 
