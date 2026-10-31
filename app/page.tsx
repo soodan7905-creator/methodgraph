@@ -56,15 +56,21 @@ export default function Home() {
             </div>
             <div className="studio-work-caption"><h3>The Admiral</h3><p>Selected film experience</p></div>
           </article>
-          <article className="studio-work-card studio-work-second">
+          <a
+            className="studio-work-card studio-work-second"
+            href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-93de2ab3-4ad1-4e22-91d9-3d9f894e8a4b"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch The Pirates (Haejeok) portfolio video on O-VATION"
+          >
             <div className="studio-work-visual">
               <span className="studio-work-kind">FEATURE FILM</span>
               <span className="studio-work-number">02</span>
               <strong>THE<br />PIRATES</strong>
               <small>HAEJEOK</small>
             </div>
-            <div className="studio-work-caption"><h3>The Pirates</h3><p>Selected film experience</p></div>
-          </article>
+            <div className="studio-work-caption"><h3>The Pirates</h3><p>Watch on O-VATION ↗</p></div>
+          </a>
           <article className="studio-work-card studio-work-third">
             <div className="studio-work-visual">
               <span className="studio-work-kind">EDITORIAL</span>
