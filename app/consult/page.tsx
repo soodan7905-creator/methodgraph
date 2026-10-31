@@ -48,7 +48,7 @@ function ConsultForm() {
     }
 
     setState("success");
-    setMessage("Your request has been received. I’ll review it and contact you with the next step.");
+    setMessage("Your project inquiry has been received. I’ll review it and follow up with the next step.");
     formElement.reset();
   }
 
@@ -102,13 +102,13 @@ function ConsultForm() {
       </label>
 
       <label>
-        Where are you most stuck?
+        Tell me about your project
         <textarea
           name="challenge"
           required
           rows={6}
           maxLength={1500}
-          placeholder="Tell me what you are making and where the decision-making has stalled."
+          placeholder="What are you making, what kind of editing or review do you need, and what is your timeline?"
         />
       </label>
 
@@ -121,7 +121,7 @@ function ConsultForm() {
       </label>
 
       <button className="button primary" disabled={state === "sending"}>
-        {state === "sending" ? "Sending…" : "Ask about a project review"}
+        {state === "sending" ? "Sending…" : "Send project inquiry"}
       </button>
 
       {message && <p className={"form-message " + state}>{message}</p>}
@@ -133,18 +133,16 @@ export default function ConsultPage() {
   return (
     <section className="shell consult-wrap">
       <div className="consult-intro">
-        <p className="eyebrow">PROFESSIONAL REVIEW</p>
-        <h1>Not another score.<br />A clearer next decision.</h1>
-        <p className="reviewer-credit">Reviewed by a film &amp; trailer editor with 25 years of professional editing experience.</p>
+        <p className="eyebrow">PROJECT INQUIRY</p>
+        <h1>Let’s make<br />your story stronger.</h1>
+        <p className="reviewer-credit">Film, trailer and storytelling expertise shaped by 25 years of professional editing.</p>
         <p>
-          I review your treatment, rough cut, or finished video to identify the real problem,
-          the strengths worth protecting, and the order in which I would revise the project.
-          After reading your request, I’ll first confirm the scope, price, and turnaround.
+          Bring your trailer, brand video, rough cut or story project. I provide editing, editorial direction, and project review depending on your needs. After reading your inquiry, I’ll confirm the scope, fee, and timeline before any work begins.
         </p>
         <ul>
-          <li>Purpose and audience</li>
-          <li>Structure, rhythm, and information load</li>
-          <li>Revision priorities and concrete next steps</li>
+          <li>Trailers, teasers and promos</li>
+          <li>Brand and story-driven video editing</li>
+          <li>Editorial direction and project review</li>
         </ul>
       </div>
 
