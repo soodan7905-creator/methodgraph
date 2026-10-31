@@ -75,7 +75,20 @@ export default function Home() {
             <div className="studio-work-caption"><h3>Your next project</h3><p>Trailers · Story-led editing</p></div>
           </article>
         </div>
-        <p className="studio-disclaimer">Graphic treatments are conceptual. Actual footage and project-specific editing credits will be added after review.</p>
+        <div className="studio-actions">
+          <a
+            className="studio-button studio-button-outline"
+            href="https://www.o-vation.co.kr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WATCH THE ORIGINAL FILM TRAILER PORTFOLIO <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p className="studio-disclaimer">
+          The visuals above are conceptual graphic treatments, not video stills. View the completed trailer work
+          on O-VATION, the original film trailer portfolio.
+        </p>
       </section>
 
       <section className="studio-about" id="about">
