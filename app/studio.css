@@ -199,3 +199,114 @@ body:has(.studio-page) .site-footer .footer-privacy { color:#8f9e99; }
 @media(prefers-reduced-motion:reduce) {
   .studio-page *, .studio-page *:before { transition:none!important; }
 }
+
+/* Portfolio: original film posters, direct video links, and a clearly explained archive. */
+.studio-work-intro {
+  margin:0 0 30px;
+  max-width:710px;
+  color:#a6b6b1;
+  font-size:14px;
+  line-height:1.8;
+}
+.studio-work .studio-work-grid {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.04fr);
+  gap:24px;
+  align-items:stretch;
+}
+.studio-work-card {
+  display:block;
+  min-width:0;
+  text-decoration:none;
+}
+.studio-work-poster {
+  position:relative;
+  width:100%;
+  height:420px;
+  overflow:hidden;
+  background:#172126;
+  border:1px solid rgba(255,255,255,.15);
+}
+.studio-work-poster img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .4s ease, filter .4s ease;
+}
+.studio-work-card:hover .studio-work-poster img,
+.studio-work-card:focus-visible .studio-work-poster img {
+  transform:scale(1.035);
+  filter:brightness(.78);
+}
+.studio-poster-view {
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:15px 16px;
+  background:rgba(7,12,15,.82);
+  border:1px solid rgba(255,255,255,.3);
+  color:#ecf4ef;
+  font:600 10px/1.3 Arial,sans-serif;
+  letter-spacing:.18em;
+}
+.studio-work-caption h3 { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; margin-top:20px; }
+.studio-work-caption h3 span { font:400 13px Arial,sans-serif; color:#d1dbd7; letter-spacing:0; }
+.studio-work-caption p { letter-spacing:.14em; text-transform:uppercase; }
+.studio-work-archive {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:420px;
+  padding:36px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#22323a,#111c23 65%,#11191d);
+  border:1px solid rgba(255,255,255,.18);
+}
+.studio-work-archive h3 {
+  margin:33px 0 19px;
+  font:300 clamp(30px,3vw,45px)/1.15 Arial,sans-serif;
+  letter-spacing:-.045em;
+}
+.studio-work-archive h3 em { color:#c5e5d9; font-style:normal; }
+.studio-work-archive>p:not(.studio-overline) {
+  margin:0 0 38px;
+  color:#b7c7c1;
+  font-size:13px;
+  line-height:1.85;
+}
+.studio-work-archive .studio-text-link { color:#d5efe4; }
+.studio-archive-footnote {
+  position:absolute;
+  bottom:25px;
+  left:36px;
+  font:400 9px/1.5 Arial,sans-serif;
+  color:#849b91;
+  letter-spacing:.19em;
+}
+.studio-work .studio-disclaimer { max-width:760px; font-size:10px; }
+@media (max-width:1000px) {
+  .studio-work .studio-work-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .studio-work-poster { height:490px; }
+  .studio-work-archive { grid-column:1/-1; min-height:300px; padding-bottom:68px; }
+}
+@media (max-width:650px) {
+  .studio-work .studio-work-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+  .studio-work-poster { height:auto; aspect-ratio:2/3; }
+  .studio-poster-view { left:7px; right:7px; bottom:7px; padding:9px 8px; font-size:8px; letter-spacing:.05em; }
+  .studio-work-caption h3 { margin-top:12px; font-size:12px; gap:5px; }
+  .studio-work-caption h3 span { font-size:11px; }
+  .studio-work-caption p { font-size:9px; letter-spacing:.04em; line-height:1.5; }
+  .studio-work-archive { padding:28px 26px 64px; min-height:285px; }
+  .studio-work-archive h3 { font-size:32px; margin:19px 0 15px; }
+  .studio-work-archive>p:not(.studio-overline) { margin-bottom:24px; font-size:12px; }
+  .studio-archive-footnote { left:26px; bottom:20px; }
+  .studio-work-intro { font-size:12px; line-height:1.75; }
+}
