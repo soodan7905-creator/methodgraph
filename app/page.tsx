@@ -59,7 +59,7 @@ export default function Home() {
           >
             <div className="studio-work-poster">
               <img
-                src="https://kobis.or.kr/common/mast/movie/2014/07/7e00a486e94f4428b8b2e54313b5c510.jpg"
+                src="https://image.tmdb.org/t/p/original/mwUpAoYxzLNkkbYknCXzSi0NuGv.jpg"
                 alt="The Admiral (Myeongryang, 2014) theatrical poster"
                 loading="lazy"
               />
@@ -79,7 +79,7 @@ export default function Home() {
           >
             <div className="studio-work-poster">
               <img
-                src="https://kobis.or.kr/common/mast/movie/2014/07/559dd04f1ad14ae896c227c30df85194.jpg"
+                src="https://www.asianmovieweb.com/de/pictures/movie/the_pirates/fullsize_poster.jpg"
                 alt="The Pirates (Haejeok, 2014) theatrical poster"
                 loading="lazy"
               />
