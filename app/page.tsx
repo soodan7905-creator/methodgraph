@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./studio.css";
+import TrailerPortfolio from "./work/TrailerPortfolio";
 
 const services = [
   { number: "01", title: "TRAILERS", description: "Teasers · Trailers · Promos", className: "studio-service-trailers" },
@@ -21,7 +22,7 @@ export default function Home() {
             Shaped by 25 years in professional film editing.
           </p>
           <div className="studio-actions">
-            <a className="studio-button studio-button-mint" href="#work">VIEW SELECTED WORK <span aria-hidden="true">↓</span></a>
+            <a className="studio-button studio-button-mint" href="#work">VIEW WORK <span aria-hidden="true">↓</span></a>
             <Link className="studio-text-link" href="/consult">START A PROJECT <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
@@ -40,79 +41,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="studio-work studio-shell" id="work">
-        <div className="studio-section-heading">
-          <p>SELECTED TRAILERS</p>
-          <span>FILM TRAILER PORTFOLIO</span>
-        </div>
-        <p className="studio-work-intro">
-          A selection of theatrical trailer projects. Select a film poster to view the corresponding
-          work on O-VATION, my original film-trailer portfolio.
-        </p>
-        <div className="studio-work-grid">
-          <a
-            className="studio-work-card"
-            href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-481bb790-636b-4c82-a744-ba7f26c87399"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View The Admiral (Myeongryang) trailer in the O-VATION portfolio"
-          >
-            <div className="studio-work-poster">
-              <img
-                src="https://image.tmdb.org/t/p/original/mwUpAoYxzLNkkbYknCXzSi0NuGv.jpg"
-                alt="The Admiral (Myeongryang, 2014) theatrical poster"
-                loading="lazy"
-              />
-              <span className="studio-poster-view">VIEW TRAILER <span aria-hidden="true">↗</span></span>
-            </div>
-            <div className="studio-work-caption">
-              <h3>THE ADMIRAL <span>명량</span></h3>
-              <p>2014 · THEATRICAL TRAILER</p>
-            </div>
-          </a>
-          <a
-            className="studio-work-card"
-            href="https://www.o-vation.co.kr/blank-q17v5?pgid=irkm5hav-93de2ab3-4ad1-4e22-91d9-3d9f894e8a4b"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View The Pirates (Haejeok) trailer in the O-VATION portfolio"
-          >
-            <div className="studio-work-poster">
-              <img
-                src="https://www.asianmovieweb.com/de/pictures/movie/the_pirates/fullsize_poster.jpg"
-                alt="The Pirates (Haejeok, 2014) theatrical poster"
-                loading="lazy"
-              />
-              <span className="studio-poster-view">VIEW TRAILER <span aria-hidden="true">↗</span></span>
-            </div>
-            <div className="studio-work-caption">
-              <h3>THE PIRATES <span>해적</span></h3>
-              <p>2014 · THEATRICAL TRAILER</p>
-            </div>
-          </a>
-          <aside className="studio-work-archive">
-            <p className="studio-overline">THE ORIGINAL PORTFOLIO</p>
-            <h3>More films.<br /><em>More stories.</em></h3>
-            <p>
-              O-VATION is my existing film-trailer portfolio website. It brings together
-              additional film trailers and editing work beyond the selections shown here.
-            </p>
-            <a
-              className="studio-text-link"
-              href="https://www.o-vation.co.kr/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              EXPLORE O-VATION <span aria-hidden="true">↗</span>
-            </a>
-            <span className="studio-archive-footnote">O-VATION / FILM TRAILER ARCHIVE</span>
-          </aside>
-        </div>
-        <p className="studio-disclaimer">
-          Film posters identify the productions. The poster images are promotional materials;
-          the linked pages contain my trailer work.
-        </p>
-      </section>
+      <TrailerPortfolio />
 
       <section className="studio-about" id="about">
         <div className="studio-about-art" aria-hidden="true"><span>FRAME / 001</span><span>STORY IS A SERIES OF DECISIONS.</span></div>
