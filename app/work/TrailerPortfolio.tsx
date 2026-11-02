@@ -9,7 +9,7 @@ const playableCount = films.filter((film) => film.videoId).length;
 export default function TrailerPortfolio() {
   const [query, setQuery] = useState("");
   const [playableOnly, setPlayableOnly] = useState(false);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const [selected, setSelected] = useState<Film | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLButtonElement | null>(null);

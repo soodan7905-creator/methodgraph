@@ -1,11 +1,10 @@
 import Link from "next/link";
 import "./studio.css";
-import TrailerPortfolio from "./work/TrailerPortfolio";
 
 const services = [
-  { number: "01", title: "TRAILERS", description: "Teasers · Trailers · Promos", className: "studio-service-trailers" },
-  { number: "02", title: "EDITING", description: "Brand Films · Video Content", className: "studio-service-editing" },
-  { number: "03", title: "DIRECTION", description: "Story · Emotion · Rhythm", className: "studio-service-direction" },
+  { number: "01", title: "TRAILERS", description: "Teasers · Trailers · Promos", href: "/work/trailers", className: "studio-service-trailers" },
+  { number: "02", title: "FILMS & VIDEO", description: "Making Films · Personal · Commercial", href: "/work/films", className: "studio-service-editing" },
+  { number: "03", title: "OAP & BRANDING", description: "On-Air Promotion · Network Design", href: "/work/branding", className: "studio-service-direction" },
 ];
 
 export default function Home() {
@@ -29,19 +28,17 @@ export default function Home() {
         <div className="studio-hero-aside" aria-hidden="true">STORY<br />EDITING<br />EMOTION<br />IMPACT</div>
       </section>
 
-      <section className="studio-services" id="services" aria-label="Services">
+      <section id="work" aria-label="Work"><div id="services" className="studio-services">
         {services.map((service) => (
-          <article className={`studio-service ${service.className}`} key={service.number}>
+          <Link href={service.href} className={`studio-service ${service.className}`} key={service.number}>
             <span className="studio-service-index">{service.number}</span>
             <div>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
             </div>
-          </article>
+          <span className="studio-service-arrow" aria-hidden="true">↗</span></Link>
         ))}
-      </section>
-
-      <TrailerPortfolio />
+      </div></section>
 
       <section className="studio-about" id="about">
         <div className="studio-about-art" aria-hidden="true"><span>FRAME / 001</span><span>STORY IS A SERIES OF DECISIONS.</span></div>
