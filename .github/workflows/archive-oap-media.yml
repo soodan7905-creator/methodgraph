@@ -15,7 +15,7 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Check out migration branch
         uses: actions/checkout@v4
@@ -25,14 +25,34 @@ jobs:
         run: |
           command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
           command -v ffprobe
-      - name: Download and verify full OAP video files
+      - name: Download and verify entire original OAP clips
         run: python3 scripts/migrate-oap-media.py
-      - name: Commit archived media and checksum manifest
+      - name: Upload source-quality OAP media in verified batches
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/work/oap/
-          if ! git diff --cached --quiet; then
-            git commit -m "Archive both original OAP videos and local poster frames"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
+          git add public/work/oap/*.mp4 public/work/oap/*.jpg public/work/oap/*.m3u8 public/work/oap/manifest.json
+          git commit -m "Archive OAP MP4, HLS playlist, poster frames and integrity manifest"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import subprocess
+
+          segments = sorted(Path("public/work/oap").glob("tooniverse-queeny-ongamenet-*.ts"))
+          if not segments:
+              raise RuntimeError("No source-quality HLS segments to upload")
+          batch_size = 12
+          for idx in range(0, len(segments), batch_size):
+              chunk = segments[idx:idx+batch_size]
+              subprocess.run(["git", "add", *map(str, chunk)], check=True)
+              subprocess.run(
+                  ["git", "commit", "-m", f"Archive original OAP HLS segment batch {idx//batch_size+1}"],
+                  check=True,
+              )
+              subprocess.run(
+                  ["git", "push", "origin", f"HEAD:{os.environ['GITHUB_REF_NAME']}"],
+                  check=True,
+              )
+              print(f"Pushed segments {idx+1}-{idx+len(chunk)} / {len(segments)}", flush=True)
+          PY
