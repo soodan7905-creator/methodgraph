@@ -1,0 +1,38 @@
+name: Check CUTTRU OAP production readiness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/check-oap-production.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check live CUTTRU OAP page and self-hosted media
+        run: |
+          set -euo pipefail
+          root="https://cuttru.com"
+          page="$root/work/branding"
+          mp4="$root/work/oap/mbc-every1.mp4"
+          hls="$root/work/oap/tooniverse-queeny-ongamenet.m3u8"
+          echo "Checking page: $page"
+          curl -fLsS --max-time 30 "$page" -o /tmp/page.html
+          echo "Page HTTP 200"
+          echo "Checking independent MP4: $mp4"
+          curl -fILsS --max-time 30 "$mp4" -o /tmp/mp4-headers.txt
+          grep -Eim1 'HTTP/' /tmp/mp4-headers.txt
+          echo "Checking local HLS: $hls"
+          curl -fLsS --max-time 30 "$hls" -o /tmp/oap.m3u8
+          grep -q '#EXT-X-ENDLIST' /tmp/oap.m3u8
+          echo "HLS complete playlist served"
+          if grep -q 'video.wixstatic.com' /tmp/page.html; then
+            echo "::error::Live site still includes old Wix-hosted OAP media"
+            exit 1
+          fi
+          echo "No Wix-hosted OAP in live page HTML"
