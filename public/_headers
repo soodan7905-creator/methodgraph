@@ -1,0 +1,16 @@
+# Serve CUTTRU's own OAP source files, independent of the O-VATION / Wix site.
+/work/oap/*.m3u8
+  Content-Type: application/vnd.apple.mpegurl
+  Cache-Control: public, max-age=3600
+
+/work/oap/*.ts
+  Content-Type: video/mp2t
+  Cache-Control: public, max-age=604800
+
+/work/oap/*.mp4
+  Content-Type: video/mp4
+  Cache-Control: public, max-age=604800
+
+/work/oap/*.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,44 @@
+name: Verify independent OAP player
+
+on:
+  push:
+    branches:
+      - oap-hls-player-20261103
+    paths:
+      - .github/workflows/verify-oap-player.yml
+      - app/work/branding/**
+      - public/_headers
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Add browser HLS playback library
+        run: npm install hls.js --save
+      - name: Verify lockfile and install from scratch
+        run: npm ci
+      - name: Confirm no O-VATION media dependency in page
+        run: |
+          ! grep -E 'wixstatic|o-vation.co.kr' app/work/branding/page.tsx
+          grep -F '/work/oap/mbc-every1.mp4' app/work/branding/page.tsx
+          grep -F '/work/oap/tooniverse-queeny-ongamenet.m3u8' app/work/branding/page.tsx
+      - name: Check production build
+        run: npm run build
+      - name: Commit reproducible dependency lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Install hls.js for local OAP media playback"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
