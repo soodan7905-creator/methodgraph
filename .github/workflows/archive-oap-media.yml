@@ -1,0 +1,38 @@
+name: Archive original OAP videos to CUTTRU
+
+on:
+  push:
+    branches:
+      - oap-independent-media-migration-20261103
+    paths:
+      - .github/workflows/archive-oap-media.yml
+      - scripts/migrate-oap-media.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out migration branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install ffmpeg utilities if necessary
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          command -v ffprobe
+      - name: Download and verify full OAP video files
+        run: python3 scripts/migrate-oap-media.py
+      - name: Commit archived media and checksum manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/work/oap/
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive both original OAP videos and local poster frames"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
