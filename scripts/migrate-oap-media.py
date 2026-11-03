@@ -17,7 +17,8 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / "public" / "work" / "oap"
-MAX_BYTES = 95 * 1024 * 1024  # GitHub rejects individual files over 100 MiB.
+MAX_BYTES = 92 * 1024 * 1024  # Leave margin below GitHub's 100 MiB hard limit.
+MAX_SOURCE_BYTES = 2 * 1024 * 1024 * 1024  # Temporary downloads can exceed GitHub's limit.
 ITEMS = [
     (
         "mbc-every1",
@@ -50,8 +51,8 @@ def download_video(url: str, destination: Path) -> int:
             if not chunk:
                 break
             received += len(chunk)
-            if received > MAX_BYTES:
-                raise RuntimeError("Video exceeds safe GitHub file-size limit")
+            if received > MAX_SOURCE_BYTES:
+                raise RuntimeError("Source video exceeds 2 GiB safety limit")
             output.write(chunk)
     if received < 100_000:
         raise RuntimeError(f"Video is unexpectedly small ({received} bytes)")
@@ -72,6 +73,40 @@ def inspect_video(path: Path) -> float:
         raise RuntimeError(f"Invalid video stream/duration: {path.name}")
     print(f"Verified {path.name}: {streams[0]} duration={duration:.1f}s", flush=True)
     return duration
+
+
+def fit_for_git(source: Path, target: Path) -> None:
+    """Keep full duration and audio, transcoding only when source is too large.
+
+    The original media is fetched in its entirety before encoding. Do not trim content.
+    """
+    original_duration = inspect_video(source)
+    if source.stat().st_size <= MAX_BYTES:
+        os.replace(source, target)
+        return
+    print(f"Source {source.name} is {source.stat().st_size / 1024**2:.1f} MiB; "
+          f"re-encoding full video for self-hosting", flush=True)
+    for crf in (22, 25, 28, 30):
+        candidate = target.with_suffix(".working.mp4")
+        try:
+            subprocess.run(
+                ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(source),
+                 "-map", "0:v:0", "-map", "0:a?", "-c:v", "libx264",
+                 "-preset", "fast", "-crf", str(crf), "-pix_fmt", "yuv420p",
+                 "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart",
+                 str(candidate)],
+                check=True,
+            )
+            duration = inspect_video(candidate)
+            if abs(duration - original_duration) > max(1.0, original_duration * .002):
+                raise RuntimeError("Transcoded OAP changed video duration")
+            print(f"CRF={crf}, size={candidate.stat().st_size / 1024**2:.1f} MiB", flush=True)
+            if candidate.stat().st_size <= MAX_BYTES:
+                os.replace(candidate, target)
+                return
+        finally:
+            candidate.unlink(missing_ok=True)
+    raise RuntimeError("Cannot fit OAP into GitHub size limit without excessive quality loss")
 
 
 def make_poster(video: Path, poster: Path, duration: float) -> None:
@@ -104,7 +139,7 @@ def main() -> None:
                 print(f"Archiving {label}...", flush=True)
                 download_video(url, tmp_path)
                 inspect_video(tmp_path)
-                os.replace(tmp_path, video)
+                fit_for_git(tmp_path, video)
             finally:
                 tmp_path.unlink(missing_ok=True)
         duration = inspect_video(video)
