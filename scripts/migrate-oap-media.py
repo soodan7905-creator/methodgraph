@@ -134,7 +134,7 @@ def make_hls(source: Path, slug: str, expected_duration: float) -> tuple[Path, l
         segment = DEST / name
         if not segment.exists() or not 1000 < segment.stat().st_size < MAX_SINGLE_FILE:
             raise RuntimeError(f"Invalid or oversized media segment: {segment}")
-        if segment.open("rb").read(1) != b"\\x47":
+        if segment.open("rb").read(1) != bytes([0x47]):
             raise RuntimeError(f"Not a valid MPEG transport-stream segment: {name}")
         chunks.append({
             "path": f"/work/oap/{name}",
