@@ -26,11 +26,20 @@ export default function OapVideo({
         Hls.isSupported()) {
       hls = new Hls({
         enableWorker: true,
+        autoStartLoad: false,
         maxBufferLength: 30,
         backBufferLength: 30,
       });
       hls.loadSource(src);
       hls.attachMedia(video);
+      const beginBuffering = () => hls?.startLoad(video.currentTime);
+      video.addEventListener("play", beginBuffering);
+      return () => {
+        video.removeEventListener("play", beginBuffering);
+        hls?.destroy();
+        video.removeAttribute("src");
+        video.load();
+      };
     } else {
       // MP4 and native HLS (including iOS Safari).
       video.src = src;
