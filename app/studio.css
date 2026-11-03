@@ -376,5 +376,8 @@ a.studio-service:focus-visible { outline:3px solid #c9e6db; outline-offset:-5px;
 .studio-credit-grid,.studio-video-grid,.studio-branding-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
 .studio-portfolio-block h3 { font-size:15px; font-weight:400; color:#c9e6db; }
 .studio-video-grid { margin-top:28px; }
-.studio-video-grid video { display:block; width:100%; aspect-ratio:16/9; background:#000; object-fit:contain; }
+.studio-video-grid video,.studio-branding-video video { display:block; width:100%; aspect-ratio:16/9; background:#000; object-fit:contain; }
 @media(max-width:650px) { .studio-portfolio-nav {gap:15px;font-size:9px;} .studio-portfolio-nav a:first-child {width:100%;} .studio-credit-grid,.studio-video-grid,.studio-branding-list {grid-template-columns:1fr;} .studio-portfolio-content {padding-top:40px;} }
+
+.studio-branding-list > article { display:flex; flex-direction:column; }
+.studio-branding-video { margin-top:auto; padding-top:28px; }
