@@ -1,0 +1,369 @@
+[
+  {
+    "label": "MBC every1",
+    "format": "mp4",
+    "video": "/work/oap/mbc-every1.mp4",
+    "poster": "/work/oap/mbc-every1.jpg",
+    "duration_seconds": 269.268,
+    "bytes": 25450839,
+    "sha256": "e8c519f22d3b8ba9e0ddcb089fc06cbcd72ca062d0b6fcd7170f451f9c21adee",
+    "source_sha256": "e8c519f22d3b8ba9e0ddcb089fc06cbcd72ca062d0b6fcd7170f451f9c21adee",
+    "video_codec": "h264",
+    "audio_tracks": 1
+  },
+  {
+    "label": "Tooniverse, Queeny, OnGameNet",
+    "format": "hls",
+    "video": "/work/oap/tooniverse-queeny-ongamenet.m3u8",
+    "poster": "/work/oap/tooniverse-queeny-ongamenet.jpg",
+    "duration_seconds": 2012.658,
+    "bytes": 271723356,
+    "sha256": "4a0a9e4eb437cc770ce4b47914e7848992b05f773e27ef9dc5f078f0e842cf37",
+    "source_sha256": "efd8624a825f2a35e5f74d0d2a278cd7c8f236914b4456537b9bdf19b3a9bb77",
+    "video_codec": "h264",
+    "audio_tracks": 1,
+    "segments": [
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0000.ts",
+        "bytes": 3230404,
+        "sha256": "dde07de6e6ede24d34d031e40eecaf60a34eb9115fd8f04b9a22e0d2aab48c0f"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0001.ts",
+        "bytes": 4703196,
+        "sha256": "b98be60c3bd399e00f5ba89a503264a88d3a75316fbae9c36273f56e9dad8eb0"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0002.ts",
+        "bytes": 3293572,
+        "sha256": "6b530518f01f2b897bdac3b225e24a8d2091e0452d7eaa8a08948ef4e251462b"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0003.ts",
+        "bytes": 2467876,
+        "sha256": "8cf56f0f15cfcef1069b5ecbd95b1bfc006775e646902d2f47feb18b601f4ecc"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0004.ts",
+        "bytes": 4645292,
+        "sha256": "ffcb816f2334666680b33474c4963307db6c7598fed567637e9589b5ac54a94e"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0005.ts",
+        "bytes": 4706204,
+        "sha256": "49796824cde3a32e277f09012eef29fb7136a6704d05d355cccb6606733d1fd1"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0006.ts",
+        "bytes": 4940828,
+        "sha256": "f4ee9688c740b118319083e379e8c800a35efc3ce3c8f2c4459021e0959771e8"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0007.ts",
+        "bytes": 4167584,
+        "sha256": "34490d7d506bc34c393252fb06f48d316cb5bda5dc70d172786b717c525ee4ed"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0008.ts",
+        "bytes": 2685392,
+        "sha256": "60a8e4ddb0719c88845eef867b15c77965da3c38da14c176599d04120d30f0ee"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0009.ts",
+        "bytes": 2274236,
+        "sha256": "19bbf00e4fc14eda089245a797f34fe91b5f785e4c162118b62c55b4c8b85545"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0010.ts",
+        "bytes": 3669008,
+        "sha256": "c5149079ab5ee2fafd37e9f302c7ff1ec03a3eeae860401e5ba3a1da07f2fbde"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0011.ts",
+        "bytes": 4027712,
+        "sha256": "67d105ab00c7b626fe6ef627e32d040b38c2222ee04f97183a6aeaeec0a1293d"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0012.ts",
+        "bytes": 4571784,
+        "sha256": "247e72050400cc6a05f76b79782ac0842e41535a2e193da96223a3c6fbd5d6d1"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0013.ts",
+        "bytes": 4303696,
+        "sha256": "de553e8ef7af438d45ca28659854414a2aefe36856cfab5a57512ebba105b167"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0014.ts",
+        "bytes": 4175668,
+        "sha256": "446e1480729bcd03c1fb3ee41e58f2c4efadc0b59749f7aa50e1a533d013593f"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0015.ts",
+        "bytes": 4419692,
+        "sha256": "6c007d3044e32a9f0c8485a2fe84e90889624676739956032654a1c4f9d4501e"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0016.ts",
+        "bytes": 5021668,
+        "sha256": "a9e2e36ba3d5a3beefcb7265b6845019538383906999c6f9391fe00e966534d8"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0017.ts",
+        "bytes": 4885744,
+        "sha256": "d8b638be43076cdbef63eb2bb82599b971878a1df4edd574467a263377d73ce2"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0018.ts",
+        "bytes": 3232096,
+        "sha256": "bdb29af27d8c6c8362906d1c8187379ea6add8b0ba97d63056fa4825be4015a2"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0019.ts",
+        "bytes": 4362164,
+        "sha256": "56c114b9186d3171211b67caeca3f0ab0ed2205a4ffb9111326971a7abb9884d"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0020.ts",
+        "bytes": 3822228,
+        "sha256": "e15d49584613969db666ddb688b8736bf43959b855e713468aa6765661aceabe"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0021.ts",
+        "bytes": 2878844,
+        "sha256": "0463c09f67fbeb4a02926c5d6a0d051869117224fec15a0fb39032a994a4b242"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0022.ts",
+        "bytes": 4483048,
+        "sha256": "b14d67a802d47aab09684ea21de1c18623d4174533d734b1a3a0c22f16775156"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0023.ts",
+        "bytes": 4788172,
+        "sha256": "ad152c80bc23e1e859eef6c4a7dc8bdf6cd006bed79f93a1926c898ad975b287"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0024.ts",
+        "bytes": 3474240,
+        "sha256": "d5a3c5611bdf949e338b7a4b4e9062a0ea2194dce96f55906d79706363df49bf"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0025.ts",
+        "bytes": 3916228,
+        "sha256": "94acc3d268a0309139de1275f3a286d701a12bd2ac84c1fa5e5860ea7811f959"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0026.ts",
+        "bytes": 4776140,
+        "sha256": "0ee3c96efb76d0e91a8283e8c175bdc588e369bdf7e76b85e766426d291b9f39"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0027.ts",
+        "bytes": 4211952,
+        "sha256": "7db5f394c2128987faea60444c11d8093f96bc5a54e6deae29249e5030a7bf20"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0028.ts",
+        "bytes": 4367616,
+        "sha256": "5d613a85414cc0f62df87f9cd6cceefbba41e9cde8adf05d87ab0a3bd25d4e42"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0029.ts",
+        "bytes": 3630280,
+        "sha256": "67c610a755258b53cbec3c8dac1a93fa52c068600d9377456ab039c3bdcdca73"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0030.ts",
+        "bytes": 4515008,
+        "sha256": "b5946783db2312f263cf95590460976ffc67d577023d7ba8f865458d19e0d7f4"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0031.ts",
+        "bytes": 4352200,
+        "sha256": "d29bc6bf027465c61dbb25f24835be2e0257f61f4de9bf310651f1a5b37998f2"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0032.ts",
+        "bytes": 3772220,
+        "sha256": "03977b59316206ae200d84e38a5f711a7835d4923d7869bdfdaddd713be11705"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0033.ts",
+        "bytes": 5059644,
+        "sha256": "722a4f2156e330e341f9a1e80da129404edc0500c1b35657a24d97de52023279"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0034.ts",
+        "bytes": 4739104,
+        "sha256": "ae79666b2f25fbe3dae2c6e539428ca370a56b7aca340359162c1b0d82560551"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0035.ts",
+        "bytes": 4019816,
+        "sha256": "50aff0a29cb1a60fdafc07dd7b83242feb877e8a9e75220f8bb39cdfc317125d"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0036.ts",
+        "bytes": 4910372,
+        "sha256": "e80dceaf5fd04573bd154d3d9ff227f80f5b6e9d8836124ff37d7789bc525429"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0037.ts",
+        "bytes": 3230780,
+        "sha256": "431bf96e0abc11f9164af5555bea5208b86f9b7dde38a78c833b725cd2e33462"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0038.ts",
+        "bytes": 2786724,
+        "sha256": "a075e393e4c802c96b8a531015c4d0ddd68b885bf26d738515238fe8e9dad42a"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0039.ts",
+        "bytes": 2696296,
+        "sha256": "b123ebcddf2bbfb173187c798848a8409d3fd4f9f0210c7eef97e328fd3e868e"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0040.ts",
+        "bytes": 2451332,
+        "sha256": "d58d465232ca20d489f6ce244da1973f25bbf468f112ef208f60c3fc631b5bc8"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0041.ts",
+        "bytes": 2198848,
+        "sha256": "ff63a766fbb4cb35945381d48d9ac0caa6160767e8e4a4571db6a6c15e804bcd"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0042.ts",
+        "bytes": 3965108,
+        "sha256": "d0d8ef92496ee58709d6e16989e41a0b548ec8095fc2b5f59a05d745bc0781bc"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0043.ts",
+        "bytes": 3769588,
+        "sha256": "99f8dabdd878eeac23944a97af37ceee88811afcbd235175782f9905b2150908"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0044.ts",
+        "bytes": 4130548,
+        "sha256": "c314cbdf4ae56618604b24d2ff051fd778b3e35cd1af50bbc09ce89d7afdc2ac"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0045.ts",
+        "bytes": 4900220,
+        "sha256": "ee46939bdc03ec47f1f3a470cbb5b2f8a77958bd7a6f8940231d17c9faeb8765"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0046.ts",
+        "bytes": 4002144,
+        "sha256": "67c0d9acba33c238918b639ce572007209184d3cc7407944d6f31075cd0a581e"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0047.ts",
+        "bytes": 4199168,
+        "sha256": "f01433a518ee3cee975528b9a12943222ec638f3a76744f6560b68924dcca185"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0048.ts",
+        "bytes": 3955708,
+        "sha256": "de1032827f58a558dbfb5fbcbe66ba5113235fddff9279b7f7c24df0be5aed07"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0049.ts",
+        "bytes": 3776544,
+        "sha256": "fc03b986e5cf50b6d1e633ea72a54285d1e08525fe0cb3db902144a418b32936"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0050.ts",
+        "bytes": 4466504,
+        "sha256": "c6998fd541dcbb5c94c3349c56ea51faf89815becfe921edad4f45cb17071e86"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0051.ts",
+        "bytes": 3310680,
+        "sha256": "c2614c27f64ed19f885530886e8ce8a385571412748ca4480584c0a65df685e7"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0052.ts",
+        "bytes": 4755272,
+        "sha256": "5154e49d8e8bf10ae4b6c333c84fd797ec49dd372345d73f6cb0a333c52eaecc"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0053.ts",
+        "bytes": 4421572,
+        "sha256": "ec3ed1663dc3d8fdac9d840de9ac4b783108e18de1cb0801f348f4cd32d255d6"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0054.ts",
+        "bytes": 3839524,
+        "sha256": "b054faadbdb038120f6b719f00d1e97807cbefdbaddd2cc7ecd552ab1cdc9d60"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0055.ts",
+        "bytes": 4131300,
+        "sha256": "434a7986bed168dec9cfe265b1af70f21f0c5ac44142114f6a6d13b6335c20de"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0056.ts",
+        "bytes": 3847984,
+        "sha256": "198fbc49390255db4696b235e7a3ce4e1ce65b359bea133c1b1ffc8de12261d8"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0057.ts",
+        "bytes": 4524408,
+        "sha256": "45cce4fcd4af788daebae6837518d45d37f1bbf6305ae19ba12f16770892f98a"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0058.ts",
+        "bytes": 4578928,
+        "sha256": "b9cb1ba1b42ed1ca7dfe6d009e710eb9c1035b56da73a17469935c1512fe3e7f"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0059.ts",
+        "bytes": 5085212,
+        "sha256": "490f06236c4050e61cf98f49edf41e4efe37b45f5c5138db56ec0c1a548343e6"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0060.ts",
+        "bytes": 4526852,
+        "sha256": "66e06f1461ba29cac8658fa0ebc28958ac29e271a5e5e1dd2de58b58f3b1399a"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0061.ts",
+        "bytes": 4877472,
+        "sha256": "9daff4c3cee6e1288535d614b4e3dcf8a93d86ed04c357a72d58cc7819f5ba39"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0062.ts",
+        "bytes": 5264000,
+        "sha256": "a39f27c1060b27979b542853693f109e14667e8b5933538f9ba934ed835fe6f1"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0063.ts",
+        "bytes": 5162104,
+        "sha256": "1064f10e4350001916192774596fa7ab7cb59be1bee71f999a7459c67bc8a3a9"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0064.ts",
+        "bytes": 4092572,
+        "sha256": "7d02cbafd4c87a973f00f246fefcff2bcb378f9da7379763f3e903029736394b"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0065.ts",
+        "bytes": 3907768,
+        "sha256": "3f062211fc744c0df03d178a79b3d750efa80d9a518e0e1547b4bd5f46eb05ee"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0066.ts",
+        "bytes": 3175884,
+        "sha256": "2f47b22b8f6493899e2df3d385032088bf13c92f61bd6c5b2c3fdc9f378a7f9a"
+      },
+      {
+        "path": "/work/oap/tooniverse-queeny-ongamenet-0067.ts",
+        "bytes": 191384,
+        "sha256": "7bef9581f182d5445a2b0c3c1e508ddfe5919abea811e26529657c025de12e6f"
+      }
+    ],
+    "remuxed_without_reencoding": true
+  }
+]
